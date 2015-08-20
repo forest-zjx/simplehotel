@@ -1,0 +1,87 @@
+ 
+<body>  
+<div class="admin_list_container">
+	
+	<table class="table" charset="UTF-8">
+	  <tr>
+	  	<th>酒店名称</th>
+	  	<th>酒店地址</th>
+	    <th>酒店经纬度</th>
+	    <th>酒店经纬度</th>
+	    <th>酒店电话</th>
+	    <th>用户名</th>
+	    <th>密码</th>
+	    <th>角色</th>	
+
+	    <th>状态</th>
+	    <th>操作</th>
+	  </tr>
+	
+	  <% @hotals.each do |hotal| %>
+	    <tr>
+
+	      <td><%= hotal.name%></td>
+	      <td><%= hotal.address%></td>
+	      <td><%= hotal.lat%></td>
+	      <td><%= hotal.lon%></td>
+	  
+	      <td><%= hotal.tel%></td>
+	      <td><%= hotal.username%></td>
+	      <td><%= hotal.password%></td>
+	
+	      <td><%= hotal.is_admin%></td>
+			<td><%= hotal.status%></td>
+	      <td>
+	      	<%= link_to '查看', hotal_path(hotal) %>
+		    <%= link_to '编辑', edit_hotal_path(hotal), 'data-no-turbolink' => true %>
+		    <%= link_to '删除', hotal_path(hotal),method: :delete, data: { confirm: '确定删除？' } %>
+		    
+	      </td>
+	    </tr>
+	  <% end %>
+	</table>
+	
+
+</div> 
+          </div><!--/row-->  
+        </div><!--/span-->  
+      </div><!--/row-->  
+  
+      <hr>  
+  
+
+  
+    </div><!--/.fluid-container-->  
+  
+    <!-- Le javascript  
+    ================================================== -->  
+    <!-- Placed at the end of the document so the pages load faster -->  
+    <script src="//cdnjs.bootcss.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  
+    <script src="//cdnjs.bootcss.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>  
+  
+  </body>  
+</html> 
+<script>
+	if(document.getElelmentById("status").value=="1")
+		{document.getElelmentById("status").value=="启用"}
+	else
+		{document.getElelmentById("status").value=="禁用"}
+	
+	if(document.getElelmentById("is_admin").value=="1")
+		{document.getElelmentById("is_admin").value=="超级管理员"}
+	else
+		{document.getElelmentById("is_admin").value=="非管理员"}
+	
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

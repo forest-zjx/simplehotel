@@ -1,0 +1,25 @@
+connection: &connection
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  
+development:
+  <<: *connection
+  host: localhost
+  database: hotalmanager
+  username: postgres
+  password: postgres
+  
+test:
+  <<: *connection
+  host: localhost
+  database: hotalmanager
+  username: root
+  password: maryrose
+
+production:
+  <<: *connection
+  database: icityshinkong
+  username: icityshinkonguser
+  password: iCityShinkongUser2015
+  host: localhost

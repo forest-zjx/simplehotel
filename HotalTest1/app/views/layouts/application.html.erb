@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+    <%= stylesheet_link_tag 'application', media: 'all',
+                                           'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		#allmap {width: 100%;height: 100%;overflow:hidden;margin:0;font-family:"微软雅黑";}
+		.navbar .nav 
+		{
+   			 margin: 6px 10px 0 0;
+		}
+	</style>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
+    <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+    <%= link_to "酒店管理系统", '#', id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav pull-right">
+
+
+          	  <li><%= link_to '添加酒店',new_hotal_path %></li>
+	    	  <li><%= link_to '酒店信息',hotals_path %></li>  	  
+              <li><a href="users/sign_out">Log Out</a></li>	            
+  
+          
+      </ul>
+    </nav>
+    </div>
+    </header>
+  </head>
+ 
+    
+<body>
+	<div class="container">
+	  <%= yield %>
+	  <small>
+		     <p class="notice"><%= notice %></p>
+     		 <p class="notice"><%= alert %></p>
+	  </small>
+	  <footer class="footer">		  
+		  <nav>
+		    <ul>
+		      <li><%= link_to "About",   '#' %></li>		      
+		      <li><%= link_to "Contact", '#' %></li>
+		      <li><a href='#'>News</a></li>
+		    </ul>
+		  </nav>
+	  </footer>
+	</div>
+</body>
+  
+</html>
+  
